@@ -1,4 +1,4 @@
-
+//转为年月日格式
 export default function(val,f){
 // console.log(val)
     var str = f ? f : 'y-m-d';

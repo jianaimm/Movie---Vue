@@ -3,21 +3,21 @@
 
         <router-view></router-view>
         <mu-tabs :value="activeTab" @change="handleTabChange">
-            <mu-tab value="tab1" icon="home" title="首页" @click="toIndex"/>
-            <mu-tab value="tab2" icon="favorite" title="购票" @click="toTicket"/>
-            <mu-tab value="tab3" icon="shop" title="商城" @click="toShop"/>
-            <mu-tab value="tab4" icon="movie" title="直播" @click="toBroadcast"/>
-            <mu-tab value="tab5" icon="person" title="我的" @click="toUser"/>
+            <mu-tab value="tab1" icon="home" title="首页" @touchstart.native="toIndex"/>
+            <mu-tab value="tab2" icon="favorite" title="购票" @touchstart.native="toTicket"/>
+            <mu-tab value="tab3" icon="shop" title="商城" @touchstart.native="toShop"/>
+            <mu-tab value="tab5" icon="person" title="我的" @touchstart.native="toLogin"/>
 
         </mu-tabs>
-        <div v-show="isLoading" class="loading">
+        <!--<div v-show="isLoading" class="loading">
             <img src="./assets/loading.gif"/>
-        </div>
+        </div>-->
     </div>
 </template>
 
 <script>
 
+import axios from 'axios'
 import { Icon } from 'vux';
 
 export default {
@@ -48,40 +48,49 @@ export default {
         toShop(){
             this.$router.push('/shop')
         },
-        toBroadcast(){
-            this.$router.push('/broadcast')
-        },
-        toUser(){
-            this.$router.push('/user')
+        toLogin(){
+            this.$router.push('/login')
         },
         handleTabChange (val) {
             this.activeTab = val
         }
+    },
+    mounted(){
+//获取本地数据时，存放在static目录下面,可以直接获取；
+        /*axios.get('/static/json/payedorder.js').then(data=>{
+            console.log(data)
+        })*/
     }
 
 }
 </script>
 
-<style>
+<style lang="less">
+    @import '~vux/src/styles/reset.less';
+
     body {
         margin: 0;
+    }
+    html,
+    body {
+        height: 100%;
     }
     img {
         vertical-align: top;
     }
-    /*#app {
+    #app {
         position: relative;
-        padding-bottom: 75px;
+        width: 100%;
         height: 100%;
-    }*/
+    }
     .mu-tabs {
         position: fixed;
         bottom: 0;
         left: 0;
+        z-index: 99;
     }
     .loading {
-        /*display: none;*/
-        position: absolute;
+        position: fixed;
         left: 0;
         top: 0;
         right: 0;

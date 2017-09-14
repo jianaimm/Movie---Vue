@@ -8,11 +8,13 @@ import 'muse-ui/dist/muse-ui.css'
 import 'muse-ui/dist/theme-carbon.css' // 使用 carbon 主题
 import VueScroller from 'vue-scroller'
 import 'font-awesome/css/font-awesome.min.css'
+import VueJsonp from 'vue-jsonp'
 
 import store from './store'
 
 Vue.use(MuseUI)
 Vue.use(VueScroller)
+Vue.use(VueJsonp);
 
 Vue.config.productionTip = false
 

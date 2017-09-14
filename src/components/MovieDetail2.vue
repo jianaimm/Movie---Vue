@@ -7,24 +7,22 @@
                     <img :src="movieDetail.image"/>
                 </div>
                 <div class="movieIcons">
-                    <span @touchend="goBack">
-                        <i class="fa fa-angle-left" aria-hidden="true"></i>
-                    </span>
+                <span @touchstart="goBack">
+                    <i class="fa fa-angle-left" aria-hidden="true"></i>
+                </span>
+
                     <span>
-                        <i class="fa fa-share-square-o" aria-hidden="true"></i>
-                    </span>
+                    <i class="fa fa-share-square-o" aria-hidden="true"></i>
+                </span>
                     <span>
-                        <i class="fa fa-star-o"></i>
-                    </span>
+                    <i class="fa fa-star-o"></i>
+                </span>
 
                 </div>
 
                 <div class="introduction">
                     <div class="movieImage">
                         <img :src="movieDetail.image"/>
-                        <router-link :to="{ name: 'Trailer',params: {id: movieId}}">
-                            <img src="../assets/play.png"/>
-                        </router-link>
                     </div>
                     <div class="movieContent">
                         <h4>{{movieDetail.titleCn}}</h4>
@@ -48,7 +46,7 @@
                 <div class="openDetail">
                     <p v-if="isContract" class="recommend">{{ movieDetail.content | substr }}</p>
                     <p v-else class="recommend" >{{ movieDetail.content }}</p>
-                    <span @touchend="openDetail">
+                    <span @touchstart="openDetail">
                  <img v-if="isContract" src="../assets/down.png"/>
                     <img v-else src="../assets/up.png"/>
             </span>
@@ -160,22 +158,18 @@
               filmMini: {//网友短评
 
               },
-              isContract: true,//影片介绍，是否是收起状态
-              movieId: this.$route.params.movieId
+              isContract: true//影片介绍，是否是收起状态
           }
         },
         computed: {
             isLoading(){
                 return this.$store.state.isLoading
-            },
-            address(){
-                return this.$store.state.address
             }
         },
         created(){
             this.$store.commit('updateLoading',1);
             //影片详情
-            fetch('/api/movie/detail.api?locationId='+ this.address.addressId +'&movieId='+this.$route.params.movieId)
+            fetch('/api/movie/detail.api?locationId='+290+'&movieId='+this.$route.params.movieId)
                 .then( res => {
                     return res.json();
                 }).then( data => {
@@ -269,7 +263,6 @@
         overflow: hidden;
     }
     .movieImage {
-        position: relative;
         float: left;
         margin-left: 2%;
         margin-top: 20px;
@@ -277,24 +270,9 @@
         border: 2px solid rgba(255,255,255,.6);
         height: 180px;
     }
-    .movieImage>img {
+    .movieImage img {
         width: 100%;
         height: 100%;
-    }
-    .movieImage a {
-        position: absolute;
-        left: 50%;
-        top: 50%;
-        transform: tranlate(-50%,-50%);
-        -webkit-transform: translate(-50%,-50%);
-        width: 50%;
-        height: 50%;
-        text-align: center;
-        color: #fff;
-    }
-    .movieImage a img {
-        width: 100%;
-        height: auto;
     }
     .movieContent {
         float: left;

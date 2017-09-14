@@ -3,7 +3,8 @@
         <div class="gridlist-demo-container">
             <mu-grid-list class="gridlist-inline-demo">
                 <mu-grid-tile
-                    @click.native="movieDetail(hotlist[index].movieId)"
+                    @touchend.native="movieDetail(hotlist[index].movieId)"
+
                     titleBarClass="movieTitle"
                     v-for="tile, index in hotlist"
                     :cellHeight="200"
@@ -39,7 +40,7 @@
         },
         methods: {
             movieDetail(id){
-                console.log(id,'点击')
+//                console.log(id,'点击')
                 this.$router.push('/movieDetail/'+id);
             }
         }
@@ -57,7 +58,9 @@
         flex-wrap: nowrap;
         overflow-x: auto;
     }
-
+    .gridlist-inline-demo>div {
+        width: 33.5% !important;
+    }
     #girdList .gridlist-demo-container {
         padding: 0 15px;
     }

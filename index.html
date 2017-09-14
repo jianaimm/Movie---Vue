@@ -6,7 +6,13 @@
     <title>vux-demo</title>
       <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic">
       <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-      <!--<link rel="stylesheet" href="./node_modules/font-awesome-4.7.0/css/font-awesome.min.css">-->
+      <script>
+          (function(){
+              var html = document.getElementsByTagName('html')[0];
+              var width = html.getBoundingClientRect().width;
+              html.style.fontSize = width/50 + 'px';
+          })();
+      </script>
   </head>
   <body>
     <div id="app"></div>
