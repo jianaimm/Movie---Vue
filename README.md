@@ -1,5 +1,5 @@
 # Movie---Vue
-vue,vuex,vue-router,vux,vue-scroller,Muse UI等，移动端APP，API接口数据来自时光网，网易新闻，豆瓣等
+vue,vuex,vue-router,vux,vue-scroller,vue-jsonp,Muse UI等，移动端APP，API接口数据来自时光网，网易新闻，豆瓣等
 # 说明
 
 > 本项目是基于时光网提供的电影和图片等api编写的移动端的app。 如果对您有帮助，您可以点右上角 "Star" 支持一下 谢谢！ ^_^ 或者您可以 "follow" 一下，我会不断开源更多的有趣的项目 如有问题请直接在 Issues 中提;
