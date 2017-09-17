@@ -1,5 +1,5 @@
 # Movie---Vue
-vue,vuex,vue-router,vux,vue-scroller,Muse UI等，移动端APP，API接口数据来自时光网，头条，糯米等
+vue,vuex,vue-router,vux,vue-scroller,Muse UI等，移动端APP，API接口数据来自时光网，网易新闻，豆瓣等
 # 说明
 
 > 本项目是基于时光网提供的电影和图片等api编写的移动端的app。 如果对您有帮助，您可以点右上角 "Star" 支持一下 谢谢！ ^_^ 或者您可以 "follow" 一下，我会不断开源更多的有趣的项目 如有问题请直接在 Issues 中提;
@@ -32,12 +32,12 @@ npm run build（开发环境不需要执行）
 
 # 技术栈
 ```
-vue,vuex,vue-router,fetch,muse-ui,webpack,vue-scroller,vux
+vue,vuex,vue-router,vue-jsonp,fetch,muse-ui,webpack,vue-scroller,vux
 ```
 
 
 # 项目周期一览
-> 1. 静态页面
+> 1. 多个页面布局，跳转
 
 > 2. 搭建好页面并分配好各个组件和跑通整个流程，
 
@@ -52,7 +52,7 @@ vue,vuex,vue-router,fetch,muse-ui,webpack,vue-scroller,vux
      - assets 是静态资源管理文件
      - 上拉加载更多
 
-> 5. 搜索实现了点击加载更多
+> 5. 搜索/search实现了用户搜索功能
 
 > 6. 购票的首页和列表页和详情页的逻辑和一些组件的封装
 
@@ -60,8 +60,7 @@ vue,vuex,vue-router,fetch,muse-ui,webpack,vue-scroller,vux
        - 登录:/login
        - 注册:/register
 
-> 8. 商城的首页和详情页和列表页还有下面的导航切换路由
-
-> 9. 接口获取方式采用fetch和后端代理，解决跨域问题
+> 8. 首页，以及预告片/花絮页面，实现上拉加载更多
+> 9. 接口获取方式采用fetch，axios,jsonp和后端代理，解决跨域问题
 
 
