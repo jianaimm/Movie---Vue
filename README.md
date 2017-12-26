@@ -7,7 +7,7 @@ vue,vuex,vue-router,vux,vue-scroller,vue-jsonp,Muse UI等，移动端APP，API�
 # 克隆到本地
 
 ```
-git clone https://github.com/Jacknode/Movie---Vue.git
+git clone https://github.com/jianaimm/Movie---Vue.git
 ```
 
 # 进入文件夹
